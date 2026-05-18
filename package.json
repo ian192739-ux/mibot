@@ -1,16 +1,31 @@
 {
   "name": "mibot",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "version": "2.0.0",
+  "description": "Bot de Discord con moderación, XP y logs",
+  "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node src/index.js",
+    "deploy": "node deploy-commands.js",
+    "dev": "node --watch src/index.js",
+    "24/7": "pm2 start ecosystem.config.js",
+    "stop": "pm2 stop mibot",
+    "restart": "pm2 restart mibot",
+    "logs": "pm2 logs mibot",
+    "status": "pm2 status"
   },
-  "keywords": [],
+  "keywords": [
+    "discord",
+    "bot"
+  ],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
-    "discord.js": "^14.26.4"
+    "discord.js": "^14.26.4",
+    "dotenv": "^16.5.0",
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "pm2": "^7.0.1"
   }
 }
